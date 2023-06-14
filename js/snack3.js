@@ -27,4 +27,6 @@ const lessWeight = bikes.reduce(
   0
 );
 
-console.log(lessWeight);
+const { name, weight } = lessWeight;
+
+document.body.innerHTML = `La bici più leggera è la ${name} e pesa ${weight}kg.`;
