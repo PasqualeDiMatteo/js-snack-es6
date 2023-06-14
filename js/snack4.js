@@ -40,3 +40,26 @@ const newTeams = teams.map(({ name, failImmediately }) => ({
 }));
 
 console.log(newTeams);
+
+let teamsAndFouls = newTeams.reduce((table, { name, failImmediately }) => {
+  return (table += `
+      <tr>
+          <td>${name}</td>
+          <td>${failImmediately}</td>
+      </tr>
+  `);
+}, "");
+
+teamsTable = `
+  <table>
+      <thead>
+          <th>Name</th>
+          <th>Fail Immediately</th>
+      </thead>
+      <tbody>
+          ${teamsAndFouls}
+      </tbody>
+  </table>
+`;
+
+document.body.innerHTML += teamsTable;
